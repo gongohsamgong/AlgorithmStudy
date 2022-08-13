@@ -1,1 +1,1 @@
-# AlgorithmSutdy
+# Daily Algorithm Study
