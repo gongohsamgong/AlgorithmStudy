@@ -1,19 +1,17 @@
 n = int(input())
-lst = []
-score = []
+score = [0] * 79
 
 for i in range(n):
     lst = list(input())
-    a = 1
-    scr = 0
-    for j in range(len(lst) - 1):
+    scr = [0] * len(lst)
+    for j in range(len(lst)):
         if lst[j] == 'O':
-            scr += a
-            if lst[j+1] == 'O':
-                if a != 1:
-                    scr -= a
-                a += 1
-                scr += a
-            else:
-                a = 1
-    print(scr)
+            scr[j] = 1
+            if j > 0 and lst[j-1] == 'O':
+                scr[j] = scr[j-1] + 1
+        else:
+            scr[j] = 0
+    score[i] = sum(scr)
+
+for i in range(n):
+    print(score[i])
