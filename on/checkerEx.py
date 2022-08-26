@@ -10,12 +10,14 @@ class Checker:
         else:
             raise Exception("n(%d)은 1보다 크거나 같은 정수여야 합을 구할 수 있음" % args[0])
 
+
 @Checker
 def get_sum(n):
     sum_ = 0
-    for i in range(1, n+1):
+    for i in range(1, n + 1):
         sum_ += i
     return sum_
+
 
 if __name__ == '__main__':
     try:
