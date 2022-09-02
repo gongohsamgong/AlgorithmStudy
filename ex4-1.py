@@ -19,7 +19,7 @@ def move(x_, y_, n_, way):
 
 if __name__ == '__main__':
     n = int(input())
-    direction =input().split()
+    direction = input().split()
     x = y = 1
     for i in range(len(direction)):
         x, y = move(x, y, n, direction[i])
