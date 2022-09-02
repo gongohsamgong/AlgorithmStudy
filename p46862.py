@@ -21,7 +21,6 @@ def solution(n, lost, reserve):
 
     for i in range(1, n+1):
         if result[i] > 0:
-            result[0] += 1
+            answer += 1
 
-    answer = result[0]
     return answer
