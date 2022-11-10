@@ -1,12 +1,18 @@
 import sys
 
 
+# def find(arr):
+#     result = []
+#     for i in range(1, 31):
+#         if i not in arr:
+#             result.append(i)
+#     return result
+
 def find(arr):
-    result = []
     for i in range(1, 31):
-        if i not in arr:
-            result.append(i)
-    return result
+        if i in arr:
+            arr.remove(i)
+    return arr
 
 
 if __name__ == '__main__':
