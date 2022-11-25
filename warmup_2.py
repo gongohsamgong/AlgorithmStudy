@@ -1,8 +1,9 @@
 def solution(array):
     answer = 0
+    temp = ''
     for i in range(len(array)):
-        if '7' in str(array[i]):
-            for j in range(len(str(array[i]))):
-                if '7' == str(array[i])[j]:
-                    answer += 1
+        temp += str(array[i])
+    for i in range(len(temp)):
+        if '7' == temp[i]:
+            answer += 1
     return answer
