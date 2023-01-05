@@ -17,8 +17,7 @@ def solution(operations):
         temp.sort()
 
     if len(temp) == 0:
-        for i in range(2):
-            answer.append(0)
+        answer = [0, 0]
     else:
         answer.append(max(temp))
         answer.append(min(temp))
