@@ -16,7 +16,7 @@ def bfs(graph, x, y):
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < m and 0 <= ny < n and graph[nx][ny] == 0:
-                graph[nx][ny] == 1
+                graph[nx][ny] = 1
                 queue.append((nx, ny))
                 size += 1
     return size
