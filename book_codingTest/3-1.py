@@ -8,7 +8,7 @@ def solution(people):
     for rate in people:
         count += 1  # 한 그룹에 있는 인원 수
         if count >= rate:  # 1 2 2 3 3 3 4
-            result += 1 # 그룹 개수
+            result += 1     # 그룹 개수
             count = 0
     return result
     
