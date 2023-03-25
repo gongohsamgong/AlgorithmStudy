@@ -19,16 +19,16 @@ from collections import Counter
 def solution(topping):
     answer = 0
     # topping 배열의 각 원소가 몇번씩 나오는지 저장되는 객체
-    chulsoo = Counter(topping)
-    sister = set()
-    # for문을 돌며 각 토핑을 dic에서 빼는 반면, set_dic에는 더하면서 dic과 set_dic의 토핑 개수가 같을때 자르는 방법을 더해나감.
+    cake1 = Counter(topping)
+    cake2 = set()
+    # for문을 돌며 각 토핑을 cake1에서 빼는 반면, cake2에는 더하면서 cake1과 cake2의 토핑 개수가 같을때 자르는 방법을 더해나감.
     for i in topping:
-        chulsoo[i] -= 1
-        sister.add(i)
+        cake1[i] -= 1
+        cake2.add(i)
         # 더 이상 해당 토핑이 없다면 삭제한다.
-        if chulsoo[i] == 0:
-            chulsoo.pop(i)
+        if cake1[i] == 0:
+            cake1.pop(i)
         # 철수와 동생 모두 동일한 개수의 토핑을 가진 경우이므로 방법의 수에 하나를 더해나감.
-        if len(chulsoo) == len(sister):
+        if len(cake1) == len(cake2):
             answer += 1
     return answer
