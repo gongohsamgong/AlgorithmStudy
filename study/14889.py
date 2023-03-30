@@ -1,5 +1,5 @@
-# https://www.acmicpc.net/problem/14889
 import sys
+# https://www.acmicpc.net/problem/14889
 
 
 def solution(n, arr):
