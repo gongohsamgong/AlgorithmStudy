@@ -3,18 +3,15 @@ import sys
 
 def solution(t, array):
     answer = []
-    xx = ''
     for i in range(t):
-        # height, width, consumer
         h, w, n = array[i][0], array[i][1], array[i][2]
-        x = 1 + n // h
-        if x // 10 == 0:
-            xx = '0' + str(x)
+        y = n % h
         if n % h == 0:
-            y = h
+            x = n // h
+            y += h
         else:
-            y = n % h
-        room = str(y) + xx
+            x = 1 + n // h
+        room = 100 * y + x
         answer.append(room)
     return answer
 
