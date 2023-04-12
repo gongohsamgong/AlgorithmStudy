@@ -1,6 +1,7 @@
 import sys
 
 
+"""
 def change_color(start, array):
     count = 0
     for i in range(8):
@@ -32,6 +33,32 @@ def solution(n, m, board):
             start_white = change_color('W', new_array)
             # BWBW
             start_black = change_color('B', new_array)
+            candidate.append(min(start_white, start_black))
+    return min(candidate)
+"""
+
+
+def change_color(array, a, b, color):
+    count = 0
+    for i in range(a, a + 8):
+        for j in range(b, b + 8):
+            if (i+j) % 2 == 0:
+                if array[i][j] != color:
+                    count += 1
+            else:
+                if array[i][j] == color:
+                     count += 1
+
+
+def solution(n, m, board):
+    candidate = []
+    for j in range(0, n - 7):
+        for i in range(0, m - 7):
+            start_x = i
+            start_y = j
+            change_color(array, i, j, color):
+
+
             candidate.append(min(start_white, start_black))
     return min(candidate)
 
