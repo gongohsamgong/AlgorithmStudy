@@ -40,26 +40,24 @@ def solution(n, m, board):
 
 def change_color(array, a, b, color):
     count = 0
-    for i in range(a, a + 8):
-        for j in range(b, b + 8):
+    for i in range(b, b + 8):
+        for j in range(a, a + 8):
             if (i+j) % 2 == 0:
                 if array[i][j] != color:
                     count += 1
             else:
                 if array[i][j] == color:
-                     count += 1
+                    count += 1
+    return count
 
 
 def solution(n, m, board):
     candidate = []
     for j in range(0, n - 7):
         for i in range(0, m - 7):
-            start_x = i
-            start_y = j
-            change_color(array, i, j, color):
-
-
-            candidate.append(min(start_white, start_black))
+            white = change_color(board, i, j, 'W')
+            black = change_color(board, i, j, 'B')
+            candidate.append(min(white, black))
     return min(candidate)
 
 
