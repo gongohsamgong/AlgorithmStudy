@@ -1,4 +1,5 @@
 import sys
+import math
 
 
 def spin(direction, array):
@@ -11,30 +12,50 @@ def spin(direction, array):
     return array
 
 
+def score(wheels):
+    point = 0
+    for i in range(4):
+        if wheels[i][0] == 1:
+            # print(math.pow(2, i))
+            point += int(math.pow(2, i))
+            # print(point)
+    return point
+
+
 def rotate(k, wheels, orders):
     for order in orders:
-        # neighbors = []
+        neighbors = []
         start_wheel = order[0] - 1  # 1 2 3 4 -> 0 1 2 3
         direction = order[1]
-        # for j in range(4):
-        #     if j % 2 == 0:
-        #         neighbors.append(wheels[j][2])
-        #     else:
-        #         neighbors.append(wheels[j][6])
-        for k in range(4):
-            if start_wheel == 0
+        direct = order[1]
+        for i in range(4):
+            neighbors.append([wheels[i][6], wheels[i][2]])
 
-
-
-def score():
-    points = 0
-
-    return points
+        # left
+        for i in range(start_wheel-1, -1, -1): # 0, 1, .. startwheel-1 까지
+            # print('left :', i+1)
+            if neighbors[i][1] != neighbors[i+1][0]:
+                wheels[i] = spin(-direction, wheels[i])
+                direction *= (-1)
+            else:
+                break
+        # right
+        for i in range(start_wheel+1, 4):
+            # print('right :', i+1)
+            if neighbors[i-1][1] != neighbors[i][0]:
+                wheels[i] = spin(-direction, wheels[i])
+                direction *= (-1)
+            else:
+                break
+        wheels[start_wheel] = spin(direct, wheels[start_wheel])
+        # print(wheels)
+    return score(wheels)
 
 
 if __name__ == "__main__":
     read = sys.stdin.readline
     wheels = [list(map(int, read().rstrip())) for _ in range(4)]    # 0 1 2 3
     K = int(read())     # 회전수
-    orders = [list(map(int, read().split()))]   # 번호, 방향(1:시계방향, -1:반시계방향)
-
+    orders = [list(map(int, read().split())) for _ in range(K)]   # 번호, 방향(1:시계방향, -1:반시계방향)
+    ans = rotate(K, wheels, orders)
+    print(ans)
