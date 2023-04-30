@@ -14,7 +14,7 @@ def operation(num1, num2, op):
 def calculate(exp, op):
     array = []
     tmp = ""
-    array = re.findall(r'\d+|[+*-]', exp)
+    array = re.findall(r'\d+|[+*-]', exp)   # 변수명 수정
 
     for o in op:
         stack = []
