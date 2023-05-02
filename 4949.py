@@ -4,15 +4,21 @@ import sys
 def solution(sentence):
     stack = []
     for i in range(len(sentence)):
-        print(stack)
+        # print(stack)
         if sentence[i] == '(':
             stack.append('(')
         elif sentence[i] == '[':
             stack.append('[')
-        elif sentence[i] == ')':
-            stack.pop()
-        elif sentence[i] == ']':
-            stack.pop()
+        elif sentence[i] == ')' and len(stack) != 0:
+            if stack[-1] == '(':
+                stack.pop()
+            else:
+                return 'no'
+        elif sentence[i] == ']' and len(stack) != 0:
+            if stack[-1] == '[':
+                stack.pop()
+            else:
+                return 'no'
         else:
             continue
     if len(stack) == 0:
@@ -26,8 +32,9 @@ if __name__ == "__main__":
     ans = []
     while True:
         sentence = read()
-        print(sentence)
-        if sentence == '. ':
+        # print(sentence)
+        if sentence == '.':
             break
-        # ans.append(solution(sentence))
-    # print(*ans)
+        print(solution(sentence))
+        ans.append(solution(sentence))
+    print(*ans)
