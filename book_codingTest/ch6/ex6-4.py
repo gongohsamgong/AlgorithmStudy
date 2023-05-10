@@ -16,7 +16,7 @@ def quick_sort(array, start, end):
         # 피벗보다 작은 데이터를 찾을 때까지 반복
         while right > start and array[right] >= array[pivot]:
             right -= 1
-        # 엇갈렸다면 작은 데이터와 큰 데이터를 교체
+        # 엇갈렸다면 작은 데이터와 큰 데이터를 교체, 왼쪽 오른쪽 다 정리되었다는 얘기임. pivot을 그 사이에 놓는거.
         if left > right:
             array[right], array[pivot] = array[pivot], array[right]
         # 엇갈리지 않았다면 작은 데이터와 큰 데이터를 교체
