@@ -1,17 +1,16 @@
 import sys
 
 
-def solution(m, arr):
-    start = 0
-    end = max(arr)
-    result = 0
+def binary_search(n, target, array):
+    start, result = 0, 0
+    end = max(array)
     while start <= end:
         total = 0
         mid = (start + end) // 2
-        for x in arr:
-            if x > mid:
-                total += x-mid
-        if total < m:
+        for i in range(n):
+            if array[i] > mid:
+                total += array[i] - mid
+        if total < target:
             end = mid - 1
         else:
             result = mid
@@ -19,9 +18,9 @@ def solution(m, arr):
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     read = sys.stdin.readline
     N, M = map(int, read().split())
-    ricecake = list(map(int, read().split()))
-    ans = solution(M, ricecake)
+    ricecakes = list(map(int, read().split()))
+    ans = binary_search(N, M, ricecakes)
     print(ans)
