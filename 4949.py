@@ -27,12 +27,7 @@ if __name__ == "__main__":
     ans = []
     while True:
         sentence = read().rstrip()
-        # print(sentence)
         if sentence == '.':
             break
-        # print(solution(sentence))
         else:
             solution(sentence)
-        # ans.append(solution(sentence))
-        # print(ans)
-    # print(*ans)

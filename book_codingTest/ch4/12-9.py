@@ -12,3 +12,4 @@ if __name__ == '__main__':
     s = read()
     ans = solution(s)
     print(ans)
+    
