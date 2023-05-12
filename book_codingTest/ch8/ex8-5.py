@@ -2,7 +2,7 @@ import sys
 
 
 def solution(n):
-    d = [0] * 3001
+    d = [0] * 300001
     for i in range(2, n+1):
         d[i] = d[i-1] + 1
         if i % 2 == 0:
@@ -14,9 +14,8 @@ def solution(n):
     return d[n]
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     read = sys.stdin.readline
-    x = int(read())
-    ans = solution(x)
+    X = int(read())
+    ans = solution(X)
     print(ans)
