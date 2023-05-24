@@ -7,11 +7,11 @@ def solution(n, array):
             if j == 0:
                 up_left = 0
             else:
-                up_left = dp[i-1][j-1]
-            if j == i:
+                up_left = array[i-1][j-1]
+            if j == 1:
                 up = 0
             else:
-                up = dp[i-1][j]
+                up = array[i-1][j]
             dp[i][j] = dp[i][j] + max(up_left, up)
     return max(dp[n-1])
 
