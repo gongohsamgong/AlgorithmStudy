@@ -8,13 +8,14 @@ def solution(n):
     next2, next3, next5 = 2, 3, 5
     for l in range(1, n):
         dp[l] = min(next2, next3, next5)
+        # 여서 if elif 차이 줜나 중요하다 그거땜에 틀림 니기럴~~
         if dp[l] == next2:
             i2 += 1
             next2 = dp[i2] * 2
-        elif dp[l] == next3:
+        if dp[l] == next3:
             i3 += 1
             next3 = dp[i3] * 3
-        elif dp[l] == next5:
+        if dp[l] == next5:
             i5 += 1
             next5 = dp[i5] * 5
     print(dp)
