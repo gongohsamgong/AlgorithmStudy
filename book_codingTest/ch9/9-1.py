@@ -12,6 +12,7 @@ for i in range(m):
 visited = [False] * (n + 1)
 distance = [INF] * (n + 1)
 
+
 # 방문하지 않은 노드 중 가장 최단 거리가 짧은 노드의 번호 반환
 def get_smallest_node():
     min_value = INF
@@ -28,6 +29,7 @@ def dijkstra(start):
     # 시작노드는 0으로 초기화
     distance[start] = 0
     visited[start] = True
+    # 시작 노드에 대한 거리 정보도 초기화
     for j in graph[start]:
         distance[j[0]] = j[1]
     # 시작 노드 제외한 n-1개에 대해서 반복
@@ -37,6 +39,7 @@ def dijkstra(start):
         visited[now] = True
         # 현재 노드와 연결된 다른 노드 확인
         for j in graph[now]:
+            # cost: j[0]을 j를 거쳐서 가느냐 / distance[j[0]]: 그냥 j[0]의 기존 거리 값
             cost = distance[now] + j[1]
             if cost < distance[j[0]]:
                 # 거리 업데이트
