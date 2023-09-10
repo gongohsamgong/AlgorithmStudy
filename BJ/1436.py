@@ -2,20 +2,17 @@ import sys
 
 
 def solution(n):
-    cnt = 0
-    start = 665
-    # flag = True
+    number, cnt = 0, 0
     while True:
-        start += 1
-        if '666' in str(start):
+        number += 1
+        if '666' in str(number):
             cnt += 1
-        if cnt == n:
-            break
-    return start
+            if cnt == n:
+                return number
 
 
 if __name__ == "__main__":
     read = sys.stdin.readline
     N = int(read())
-    ans = solution(N)
-    print(ans)
+    answer = solution(N)
+    print(answer)
