@@ -1,9 +1,9 @@
 import sys
 
 
-def solution(n, m, array, array_YN):
+def solution(n, m, array, array_yn):
     for i in range(m):
-        if array_YN[i] in array:
+        if array_yn[i] in array:
             print(1, end=' ')
         else:
             print(0, end=' ')
